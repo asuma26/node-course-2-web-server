@@ -8,9 +8,9 @@ app.set('view engine','hbs');
 
 hbs.registerPartials(__dirname+'/views/partials')
 
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
   res.render('maintenance.hbs');
-});
+});*/
 
 app.use((req,res,next)=>{
   var now=new Date().toString();
@@ -52,6 +52,9 @@ res.render('about.hbs',{
   hh:'AAAshish MMMishra'
 //  current_year: new Date().getFullYear()
 });
+});
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs');
 });
 app.get('/bad',(req,res)=>{
   res.send({
